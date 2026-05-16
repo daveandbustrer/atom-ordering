@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <MyNavBar />
-      <Suspense>
+      <Suspense fallback={<div>wait a bit</div>}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/menu" element={<MenuPage />} />

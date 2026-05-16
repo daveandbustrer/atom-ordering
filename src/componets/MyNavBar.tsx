@@ -8,15 +8,13 @@ import {
   NavLink,
 } from "react-bootstrap";
 import { NavLink as RouterLink } from "react-router-dom";
-
 export default function MyNavbar() {
   return (
     <Navbar expand="lg" bg="dark" data-bs-theme="dark" fixed="top">
       <Container fluid>
-        <NavbarBrand as={RouterLink} to="/">
-          <img src="pizza.png" alt="logo" height="35" />
+        <NavbarBrand as={RouterLink} to="/" style={{ width: "35" }}>
+          <img src="pizza.png" alt="logo" height="35" loading="lazy" />
         </NavbarBrand>
-
         <NavbarToggle aria-controls="main-navbar" />
 
         <NavbarCollapse id="main-navbar">
