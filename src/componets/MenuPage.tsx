@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 import { Col, Container, Row, ToastContainer } from "react-bootstrap";
 import { Confirm } from "./Confirm";
-import PizzaCard from "./PizzaCard";
+import { PizzaCard } from "./PizzaCard";
 import pizzas from "./data.json";
 
 function MenuPage() {

@@ -8,9 +8,20 @@ import {
   NavLink,
 } from "react-bootstrap";
 import { NavLink as RouterLink } from "react-router-dom";
-export default function MyNavbar() {
+
+interface Prop {
+  cart: string[];
+}
+
+export default function MyNavBar({ cart }: Prop) {
   return (
-    <Navbar expand="lg" bg="dark" data-bs-theme="dark" fixed="top">
+    <Navbar
+      expand="lg"
+      bg="dark"
+      data-bs-theme="dark"
+      fixed="top"
+      style={{ width: "35" }}
+    >
       <Container fluid>
         <NavbarBrand as={RouterLink} to="/" style={{ width: "35" }}>
           <img src="pizza.png" alt="logo" height="35" loading="lazy" />
@@ -28,7 +39,7 @@ export default function MyNavbar() {
             </NavLink>
 
             <NavLink as={RouterLink} to="/cart" className="nav-link">
-              Cart
+              cart
             </NavLink>
           </Nav>
         </NavbarCollapse>

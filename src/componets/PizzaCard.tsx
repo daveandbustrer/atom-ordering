@@ -9,7 +9,7 @@ interface Prop {
   };
   setOrdered: any;
 }
-function PizzaCard({ data, setOrdered }: Prop) {
+export function PizzaCard({ data, setOrdered }: Prop) {
   return (
     <Card className="h-100 shawdow-sm bg-white rounded">
       <Ratio className="ratio-1x1">
@@ -38,5 +38,3 @@ function PizzaCard({ data, setOrdered }: Prop) {
     </Card>
   );
 }
-
-export default PizzaCard;
