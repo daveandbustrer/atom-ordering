@@ -1,25 +1,33 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Col, Container, Row, ToastContainer } from "react-bootstrap";
 import { Confirm } from "./Confirm";
 import { PizzaCard } from "./PizzaCard";
 import pizzas from "./data.json";
 
-function MenuPage() {
+interface Prop {
+  cartFunc: (arg0: string) => void;
+}
+function MenuPage({ cartFunc }: Prop) {
   const initialState = pizzas.map(() => ({
     name: "",
     visible: false,
   }));
   const [ordered, setOrdered] = useState(initialState);
 
+  let amount_of_things = useRef(0);
+
   function display_confirm(name: string, id: number) {
+    cartFunc(name);
     setOrdered((prev) => {
+      amount_of_things.current++;
       const copy = [...prev];
       copy[id - 1] = { name, visible: true };
       return copy;
     });
 
     setTimeout(() => {
+      amount_of_things.current--;
       setOrdered((prev) => {
         const copy = [...prev];
         copy[id - 1].visible = false;
@@ -36,8 +44,8 @@ function MenuPage() {
             (item, index) =>
               item.visible && (
                 <Confirm
-                  key={index}
-                  id={index}
+                  key={item["name"] + String(index)}
+                  id={index + amount_of_things.current}
                   name={item.name}
                   toggle={() => {
                     setOrdered((prev) => {
