@@ -1,5 +1,3 @@
-Here’s a clean, simple, no‑nonsense **README.md** you can drop straight into your project.
-
 ---
 
 # Pizza Order UI
