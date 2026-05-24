@@ -20,25 +20,17 @@ go to this link
 
 - Pizza data is loaded from `data.json`
 - Each pizza is shown using `PizzaCard`
-- Clicking “Order” triggers a toast
+- Clicking “add to cart” triggers a toast and adds to the cart
 - The toast appears for 3 seconds and then hides automatically
-
-## File Structure
-
-```
-src/
-  App.tsx
-  App.sass
-  data.json
-  components/
-    PizzaCard.tsx
-    Confirm.tsx
-```
+- you can go to the cart page and see all the things you had ordered
+- you can press the "order" and get rid of the items and get a toast that while hide after 3 seconds
 
 ## Features
 
 - Simple pizza list UI  
 - Click‑to‑order interaction  
 - Floating confirmation toast  
-
+- cart
+- home page
+- text while the page is loading in
 ---
