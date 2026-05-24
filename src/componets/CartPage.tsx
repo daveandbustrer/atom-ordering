@@ -11,23 +11,27 @@ type cartitem = {
   name: string;
   amount: number;
 };
+
 interface Prop {
   cart: cartitem[];
+  clearCart: () => void;
 }
 
-function CartPage({ cart }: Prop) {
+function CartPage({ cart, clearCart }: Prop) {
   let index = 1;
   let temp_array: any[] = [];
   let id = 0;
+
   for (let i = 0; i < cart.length; i++) {
     for (let j = 0; j < cart[i].amount; j++) {
       temp_array.push(
-        <ListGroupItem>
+        <ListGroupItem key={`${cart[i].name}-${index}`}>
           <h6 className="display-6">
             {index}.{cart[i].name}
           </h6>
         </ListGroupItem>,
       );
+
       id += j + i + j * i;
       index++;
     }
@@ -37,27 +41,25 @@ function CartPage({ cart }: Prop) {
 
   return (
     <>
-      {showConfirm && (
-        <ToastContainer position="top-start" className="p-3">
+      <ToastContainer position="top-start" className="p-3">
+        {showConfirm && (
           <div className="z-3 position-fixed pt-5">
             <Confirm
-              toggle={() => {}}
+              toggle={() => setShowConfirm(false)}
               key={"ordered"}
               id={id * index}
               name="order"
               text="is ready"
             />
           </div>
-        </ToastContainer>
-      )}
-      <ListGroup className="align-center">
-        {temp_array.map((item) => {
-          return item;
-        })}
-      </ListGroup>
+        )}
+      </ToastContainer>
+
+      <ListGroup className="align-center">{temp_array}</ListGroup>
+
       <Button
         onClick={() => {
-          cart = [];
+          clearCart();
           setShowConfirm(true);
           setTimeout(() => setShowConfirm(false), 3000);
         }}

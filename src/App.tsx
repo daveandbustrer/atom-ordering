@@ -32,6 +32,9 @@ function App() {
     console.log(cart);
   }
   console.log(cart);
+  function clearCart() {
+    setCart([]);
+  }
   return (
     <>
       <MyNavBar cart={cart} />
@@ -39,7 +42,10 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/menu" element={<MenuPage cartFunc={changeCart} />} />
-          <Route path="/cart" element={<CartPage cart={cart} />} />
+          <Route
+            path="/cart"
+            element={<CartPage cart={cart} clearCart={clearCart} />}
+          />
         </Routes>
       </Suspense>
     </>
