@@ -4,9 +4,15 @@ interface Prop {
   toggle: (id: number) => void;
   name: string;
   id: number;
+  text?: string;
 }
 
-export function Confirm({ toggle, name, id }: Prop) {
+export function Confirm({
+  toggle,
+  name,
+  id,
+  text = "is added to the cart",
+}: Prop) {
   return (
     <Toast onClose={() => toggle(id)}>
       <Toast.Header>
@@ -16,7 +22,7 @@ export function Confirm({ toggle, name, id }: Prop) {
       </Toast.Header>
 
       <Toast.Body>
-        Your {name} will be with you shortly in 0 to 1 billion business years
+        Your {name} {text}
       </Toast.Body>
     </Toast>
   );

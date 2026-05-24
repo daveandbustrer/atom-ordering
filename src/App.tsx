@@ -39,7 +39,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/menu" element={<MenuPage cartFunc={changeCart} />} />
-          <Route path="/cart" element={<CartPage />} />
+          <Route path="/cart" element={<CartPage cart={cart} />} />
         </Routes>
       </Suspense>
     </>
