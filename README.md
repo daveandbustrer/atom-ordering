@@ -6,19 +6,10 @@ Here’s a clean, simple, no‑nonsense **README.md** you can drop straight into
 
 A small React project that displays a list of pizzas and shows a confirmation toast when a pizza is ordered.
 
-## Setup
+## how to access
+go to this link
+-https://atomicpizza.vercel.app/ 
 
-Install dependencies:
-
-```bash
-npm install
-```
-
-Run the development server:
-
-```bash
-npm run dev
-```
 
 ## Tech Used
 
