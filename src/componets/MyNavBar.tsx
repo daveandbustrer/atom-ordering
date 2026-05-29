@@ -35,6 +35,7 @@ export default function MyNavBar({ cart }: Prop) {
         <NavbarBrand as={RouterLink} to="/" style={{ height: "35" }}>
           <img src="pizza.png" alt="logo" height="35" loading="lazy" />
         </NavbarBrand>
+
         <NavbarToggle aria-controls="main-navbar" />
 
         <NavbarCollapse id="main-navbar">

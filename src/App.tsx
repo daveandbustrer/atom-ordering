@@ -14,6 +14,7 @@ type cartitem = {
 };
 function App() {
   const [cart, setCart] = useState<cartitem[]>([]);
+  const [money, setMoney] = useState(9 * (10 * 12));
   function changeCart(name: string) {
     setCart((prev) => {
       const index = prev.findIndex((item) => item.name === name);
